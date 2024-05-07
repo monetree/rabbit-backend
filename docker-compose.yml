@@ -1,0 +1,22 @@
+services:
+  web:
+    build:
+      context: ./
+      target: production
+    # command: npm start
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./logs:/var/log
+    environment:
+      NODE_ENV: production
+    env_file:
+      - .env
+    network_mode: "host"
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
