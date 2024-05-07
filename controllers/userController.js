@@ -22,8 +22,8 @@ const userCreate = async (req, res) => {
 
 const userUpdate = async (req, res) => {
   try {
-    const { id, name, email, phone, is_active } = req.body;
-    await updateUser(id, {name, email, phone, is_active});
+    const { id, name, email, phone, is_active, avatar } = req.body;
+    await updateUser(id, {name, email, phone, is_active, avatar});
     res.send({ msg: "User updated successfully" });
   } catch (error) {
     console.log(error)

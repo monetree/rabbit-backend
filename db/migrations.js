@@ -11,6 +11,7 @@ const migrate = async () => {
     CREATE TABLE `rabbit` (
       `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       `name` VARCHAR(255) NOT NULL,
+      `avatar` VARCHAR(255) NOT NULL,
       `email` VARCHAR(255) NOT NULL UNIQUE,
       `phone` VARCHAR(255) NOT NULL UNIQUE,
       `is_active` TINYINT(1) NOT NULL DEFAULT 0,
@@ -22,6 +23,7 @@ const migrate = async () => {
       .createTable("rabbit", function (table) {
         table.increments("id").primary(); // Auto-incremental primary key
         table.string("name"); // Non-nullable password field
+        table.string("avatar"); // Non-nullable password field
         table.string("email").notNullable().unique(); // Non-nullable email field
         table.string("phone").notNullable().unique(); // Non-nullable email field
         table.bool("is_active").defaultTo(false);
