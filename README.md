@@ -12,14 +12,4 @@
 1. `docker-compose build` - This to install dependencies
 2. `docker-compose up -d` - This to start the project
 
-### Teach-stacks
-
-1. Api `express.js`
-2. payment gateway `stripe`
-3. testing `chai`, `mocha`
-4. server `aws ec2`
-5. database `Mysql - AWS RDS`
-
-###
-
 Refer `.env.example` to check env variables
