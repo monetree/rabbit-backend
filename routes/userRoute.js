@@ -4,9 +4,15 @@ const {
   userCreate,
   userUpdate,
   userDelete,
-  fetchUsers
+  fetchUsers,
+  userLogin
 } = require("../controllers/userController");
 
+
+router.route("/login").post(function (req, res) {
+  const result = userLogin(req, res);
+  return result;
+});
 
 router.route("/users").get(function (req, res) {
   const result = fetchUsers(req, res);

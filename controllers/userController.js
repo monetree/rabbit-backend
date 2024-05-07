@@ -9,6 +9,21 @@ const {
 } = require("../helpers/userHelper");
 const { handleErrorResponse } = require("../utils/configs");
 
+
+const userLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (email === "admin@soubhagya.com" && password === "admin") {
+      res.send({ msg: "User logged in successfully" });
+    } else {
+      return handleErrorResponse(res, "Invalid credentials");
+    }
+  } catch (error) {
+    return handleErrorResponse(res, error.message);
+  }
+};
+
+
 const userCreate = async (req, res) => {
   try {
     const { name, email, phone } = req.body;
@@ -53,5 +68,6 @@ module.exports = {
   userCreate,
   userUpdate,
   userDelete,
-  fetchUsers
+  fetchUsers,
+  userLogin
 };
